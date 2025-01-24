@@ -14,5 +14,12 @@ private Node<E> header;
 private Node<E> trailer;
 private int size = 0;  
 
+
+    public void rotate() {
+        if (size > 1) {
+            header = header.next;
+            trailer = trailer.next;
+        }
+    }
     
 }
