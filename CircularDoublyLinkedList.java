@@ -14,8 +14,5 @@ private Node<E> header;
 private Node<E> trailer;
 private int size = 0;  
 
-public int size(){ return size; }
-
-    
     
 }
