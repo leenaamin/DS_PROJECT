@@ -9,12 +9,11 @@ package project;
  * @author Admin
  */
 public class CircularDoublyLinkedList<E> {
-    
-private Node<E> header;
-private Node<E> trailer;
-private int size = 0;  
+    private Node<E> header;
+    private Node<E> trailer;
+    private int size = 0;
 
- private static class Node<E> {
+    private static class Node<E> {
         E data;
         Node<E> next;
         Node<E> prev;
@@ -24,9 +23,7 @@ private int size = 0;
             this.next = next;
             this.prev = prev;
         }
-    }   
-
-
+    }
     public void rotate() {
         if (size > 1) {
             header = header.next;
@@ -34,26 +31,29 @@ private int size = 0;
         }
     }
 
-
-
-    public boolean isEmpty() {
-    return size == 0; // Returns true if size is 0
-}
-
-
-
-public void print() {
-    if (isEmpty()) {
-        System.out.println("The list is empty.");
-        return;
+    public void rotateBackward() {
+        if (size > 1) {
+            header = header.prev;
+            trailer = trailer.prev;
+        }
     }
 
-    Node<E> current = header;
-    do {
-        System.out.print(current.data + " ");
-        current = current.next;
-    } while (current != header); // Stop when we loop back to the header
+    public boolean isEmpty() {
+        return size == 0;
+    }
 
-    System.out.println(); // Move to the next line after printing all elements
-}
+    public void print() {
+        if (isEmpty()) {
+            System.out.println("The list is empty.");
+            return;
+        }
+
+        Node<E> current = header;
+        do {
+            System.out.print(current.data + " ");
+            current = current.next;
+        } while (current != header);
+
+        System.out.println();
+    }
 }
