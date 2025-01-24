@@ -14,6 +14,18 @@ private Node<E> header;
 private Node<E> trailer;
 private int size = 0;  
 
+ private static class Node<E> {
+        E data;
+        Node<E> next;
+        Node<E> prev;
+
+        Node(E data, Node<E> next, Node<E> prev) {
+            this.data = data;
+            this.next = next;
+            this.prev = prev;
+        }
+    }   
+
 
     public void rotate() {
         if (size > 1) {
