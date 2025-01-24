@@ -1,4 +1,3 @@
-
 public class CircularDoublyLinkedList<E> {
     
 private Node<E> header;
