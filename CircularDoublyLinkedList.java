@@ -21,5 +21,27 @@ private int size = 0;
             trailer = trailer.next;
         }
     }
-    
+
+
+
+    public boolean isEmpty() {
+    return size == 0; // Returns true if size is 0
+}
+
+
+
+public void print() {
+    if (isEmpty()) {
+        System.out.println("The list is empty.");
+        return;
+    }
+
+    Node<E> current = header;
+    do {
+        System.out.print(current.data + " ");
+        current = current.next;
+    } while (current != header); // Stop when we loop back to the header
+
+    System.out.println(); // Move to the next line after printing all elements
+}
 }
