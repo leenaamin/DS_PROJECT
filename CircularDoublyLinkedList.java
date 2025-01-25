@@ -24,6 +24,7 @@ public class CircularDoublyLinkedList<E> {
             this.prev = prev;
         }
     }
+
     public void rotate() {
         if (size > 1) {
             header = header.next;
@@ -37,6 +38,14 @@ public class CircularDoublyLinkedList<E> {
             trailer = trailer.prev;
         }
     }
+    
+    public int getSize() {
+        return size;
+    }
+    public String sizeInfo() {
+        return "The size of the list is: " + size;
+    }
+
 
     public boolean isEmpty() {
         return size == 0;
